@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{cake.cake_img.url}}" width="400" height="400">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-info">{{cake.cake_name}}</h3>
+            <i><b>{{cake.cake_flavour}}</b></i>
+            <p>{{cake.cake_desc}}</p>
+            <h6>Rs.{{cake.cake_price}}</h6><br>
+
+            <a  class="btn btn-warning" href="{% url 'cakeapp:update' cake.id %}">Update</a><br><br>
+            <a  class="btn btn-danger" href="{% url 'cakeapp:delete' cake.id %}">Delete</a>
+        </div>
+    </div>
+    <br>
+     <a  class="btn btn-dark" href="{% url 'cakeapp:home' %}">Back</a>
+</div>
+
+{% endblock %}

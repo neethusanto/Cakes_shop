@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    <p>Are you delete this cake??</p>
+   <button type="submit" class="btn btn-primary">Delete</button>
+      <br><br>
+     <a  class="btn btn-dark" href="{% url 'cakeapp:home' %}">Back</a>
+
+</form>
+
+
+{% endblock %}
